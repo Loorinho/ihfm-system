@@ -7,5 +7,6 @@ public interface IStaff
     public Guid StaffId { get; set; }
     public string Name { get; set; }
     public GenderEnum Gender { get; set; }
+    public ProfessionEnum Profession { get; set; }
     // public string Type { get; set; }
 }

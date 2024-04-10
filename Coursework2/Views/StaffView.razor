@@ -6,11 +6,36 @@
 
 @* <p role="status">Current count: @currentCount</p> *@
 
-<p class="text-center text-5xl">Staff list</p>
+<p class="text-center text-3xl font-semibold">Staff list</p>
+
+<p class="underline"><a href="/staff/register">Register</a></p>
+
+<table class="table-auto w-full border border-collapse">
+  <thead class="bg-gray-50 p-2">
+    <tr class="px-4 px-1">
+      <th class="p-2">Id</th>
+      <th class="p-2">Name</th>
+      <th class="p-2">Gender</th>
+      <th class="p-2">Profession</th>
+    </tr>
+  </thead>
+  <tbody>
+  @foreach (var staff in allStaff)
+  { 
+  <tr class="border-b p-3">
+    <td class="p-2">@staff.StaffId</td>
+    <td class="p-2">@staff.Name</td>
+    <td class="p-2">@staff.Gender</td>
+    <td class="p-2">@staff.Profession</td>
+  </tr>
+    
+  }
+
+
+
+  </tbody>
+</table>
 
 <ul>
-    @foreach (var staff in allStaff)
-    {
-        <li>@staff.Name</li>
-    }
+   
 </ul>

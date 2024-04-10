@@ -17,9 +17,9 @@ public class SystemClient: ISubject
         _staffRepository = _staffRepo;
     }
 
-    public void AddStaff(string type, string name, GenderEnum gender)
+    public void AddStaff(string type, string name, GenderEnum gender, ProfessionEnum profession)
     {
-        IStaff staff = StaffFactory.CreateStaff(type,name, gender);
+        IStaff staff = StaffFactory.CreateStaff(type,name, gender, profession);
         _staffRepository.CreateStaff(staff);
     }
     

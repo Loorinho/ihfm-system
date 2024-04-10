@@ -8,11 +8,14 @@ public class Doctor: IStaff
     public string Name { get; set; }
     public GenderEnum Gender { get; set; }
     
-    public Doctor(Guid id, string name, GenderEnum gender)
+    public ProfessionEnum Profession { get; set; }
+
+    public Doctor(Guid id, string name, GenderEnum gender, ProfessionEnum profession)
     {
         Name = name;
         Gender = gender;
         StaffId = id;
+        Profession = profession;
     }
     
 }

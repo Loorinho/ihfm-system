@@ -27,9 +27,9 @@ public class StaffController: IObserver
         GetAllStaff();
     }
 
-    public void AddStaff(string type, string name, GenderEnum gender)
+    public void AddStaff(string type, string name, GenderEnum gender, ProfessionEnum profession)
     {
-        systemClient.AddStaff(type, name, gender); 
+        systemClient.AddStaff(type, name, gender, profession); 
     }
 
     private void GetAllStaff()

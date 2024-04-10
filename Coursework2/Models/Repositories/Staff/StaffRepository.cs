@@ -9,8 +9,8 @@ public class StaffRepository: IStaffRepository
 
     public StaffRepository()
     {
-        _staff.Add(new Doctor(Guid.NewGuid(), "Loor Jacobson", GenderEnum.Male));
-        _staff.Add(new Doctor(Guid.NewGuid(), "Ziggy Dee", GenderEnum.Female));
+        _staff.Add(new Doctor(Guid.NewGuid(), "Loor Jacobson", GenderEnum.Male, ProfessionEnum.Doctor));
+        _staff.Add(new Doctor(Guid.NewGuid(), "Ziggy Dee", GenderEnum.Female, ProfessionEnum.Doctor));
     }
     
     public void CreateStaff(IStaff staff)

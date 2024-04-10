@@ -11,7 +11,6 @@ public partial class StaffView: ComponentBase
     private GenderEnum gender;
 
     private List<IStaff> allStaff;
-    
     [Inject] public StaffController StaffController { get; set; } = default;
 
     protected override void OnInitialized()
@@ -19,9 +18,9 @@ public partial class StaffView: ComponentBase
         StaffController.SetView(this);
     }
 
-    public void CreateStaff(string type, string name, GenderEnum gender)
+    public void CreateStaff(string type, string name, GenderEnum gender, ProfessionEnum profession)
     {
-        StaffController.AddStaff(type, name, gender);
+        StaffController.AddStaff(type, name, gender, profession);
     }
 
     public void SetStaff(List<IStaff> _staff)

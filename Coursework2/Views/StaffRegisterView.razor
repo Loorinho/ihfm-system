@@ -1,14 +1,55 @@
 ﻿@page "/staff/register"
+@using Coursework2.Enums
 
 <PageTitle>Staff Registration</PageTitle>
 
-
-@* <p role="status">Current count: @currentCount</p> *@
-
 <p class="text-center text-2xl font-semibold">Register staff member</p>
+<div className="w-[500px] flex justify-center items-center">
+    <div>
+        <div>
+            <label for="">Staff name</label>
+            <InputText id="name" @bind-Value="name" class="block px-2 py-1 w-full outline-none rounded-md focus:ring-2 border-1" placeholder="Enter staff name here..."/>
+        </div>
+        
+        <div>
+            <label for="">Gender</label>
+            <InputSelect id="gender" @bind-Value="gender" class="block w-25 px-3 py-2">
+                @foreach (var _gender in Enum.GetValues(typeof(GenderEnum)))
+                {
+                    <option value="@_gender">@_gender</option>
+            
+                }
+            </InputSelect>
+        </div>
+        
+        <div>
+            <label for="">Profession</label>
+            <InputSelect @bind-Value="profession" class="block w-25 px-3 py-2">
+                @foreach (var _profession in Enum.GetValues(typeof(ProfessionEnum)))
+                {
+                    <option value="@_profession">@_profession</option>
+                }
+            </InputSelect>
+        </div>
 
+        <div>
+            <label for="">Staff type</label>
+            <InputSelect @bind-Value="type" class="block w-25 px-3 py-2">
+                @foreach (var _type in Enum.GetValues(typeof(StaffEnum)))
+                {
+                <option value="@_type">@_type</option>
+                }
+            </InputSelect>
+        </div>
+        
+        <div>
+            <label for="">Staff type</label>
+            <select @bind="type" class="block w-25 px-3 py-2">
+                <option value="doctor">Doctor</option>
+                <option value="nurse">Nurse</option>
+            </select>
+        </div>
+        <button class="bg-green-600 px-5 py-2 text-white font-semibold rounded-md" onclick="@CreateStaff">Register</button>
 
-
-<ul>
-   
-</ul>
+    </div>
+</div>

@@ -7,8 +7,8 @@ namespace Coursework2.Views;
 
 public partial class StaffView: ComponentBase
 {
-    private string name = "";
-    private GenderEnum gender;
+    private string Name { get; set; }
+    private GenderEnum Gender { get; set; }
 
     private List<IStaff> allStaff;
     [Inject] public StaffController StaffController { get; set; } = default;
@@ -18,7 +18,7 @@ public partial class StaffView: ComponentBase
         StaffController.SetView(this);
     }
 
-    public void CreateStaff(string type, string name, GenderEnum gender, ProfessionEnum profession)
+    public void CreateStaff(StaffEnum type, string name, GenderEnum gender, ProfessionEnum profession)
     {
         StaffController.AddStaff(type, name, gender, profession);
     }

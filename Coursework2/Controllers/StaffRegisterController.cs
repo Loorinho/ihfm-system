@@ -1,41 +1,35 @@
 using Coursework2.Enums;
 using Coursework2.Models;
 using Coursework2.Models.Observer;
-using Coursework2.Models.Staff;
 using Coursework2.Views;
 
 namespace Coursework2.Controllers;
 
-public class StaffController: IObserver
+public class StaffRegisterController: IObserver
 {
     private readonly SystemClient systemClient;
-    private StaffView _view;
+    private StaffRegisterView _view;
 
-    public StaffController(SystemClient client)
+    public StaffRegisterController(SystemClient client)
     {
         systemClient = client;
         systemClient.AddSubscriber(this);
     }
-    public void Update(ISubject subject)
-    {
-        GetAllStaff();
-    }
-
-    public void SetView(StaffView view)
+    
+    public void SetView(StaffRegisterView view)
     {
         _view = view;
-        GetAllStaff();
+        // GetAllStaff();
     }
+
 
     public void AddStaff(StaffEnum type, string name, GenderEnum gender, ProfessionEnum profession)
     {
         systemClient.AddStaff(type, name, gender, profession); 
     }
 
-    private void GetAllStaff()
+    public void Update(ISubject subject)
     {
-        var staff = systemClient.GetStaff();
-        // return staff;
-        _view.SetStaff(staff);
+        
     }
 }
